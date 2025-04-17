@@ -12,7 +12,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import net.minecraft.client.renderer.FogRenderer;
 
-@Mixin(value = FogRenderer.class, remap = false)
+@Mixin(value = FogRenderer.class)
 public class FogMixin  {
 
 

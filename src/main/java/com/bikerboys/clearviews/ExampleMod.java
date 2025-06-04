@@ -11,6 +11,7 @@ import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -29,10 +30,10 @@ public class ExampleMod {
 
 
     public ExampleMod(FMLJavaModLoadingContext context) {
-        IEventBus modEventBus = context.getModEventBus();
+
 
         // Register the commonSetup method for modloading
-        modEventBus.addListener(this::commonSetup);
+        context.getModEventBus().addListener(this::commonSetup);
 
 
 
@@ -75,7 +76,7 @@ public class ExampleMod {
                  LocalPlayer mc = Minecraft.getInstance().player;
 
                  if (Config.NauseaRemover) {
-                     mc.removeEffect(MobEffects.NAUSEA);
+                     mc.removeEffect(MobEffects.CONFUSION);
                  }
                  if (Config.BlindnessRemover) {
                      mc.removeEffect(MobEffects.BLINDNESS);

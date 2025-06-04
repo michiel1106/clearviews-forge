@@ -15,7 +15,7 @@ public class PortalOverlay {
 
 
     @Inject(method = "renderPortalOverlay", at = @At("HEAD"), cancellable = true)
-    private void renderPortalOverlay(GuiGraphics context, float nauseaStrength, CallbackInfo ci) {
+    private void renderPortalOverlayd(GuiGraphics p_283375_, float p_283296_, CallbackInfo ci) {
 
         if (Config.PortalOverlay) {
             ci.cancel();
